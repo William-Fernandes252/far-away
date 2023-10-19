@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Quicksand:wght@500;700&display=swap');
 
-:root {
-  --danger-color: rgb(178, 0, 0);
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -54,11 +50,6 @@ h1 {
   color: var(--danger-color);
   font-size: 1.8rem;
   flex-basis: content;
-}
-
-.add-form .add-form-delete-button {
-  background-color: var(--danger-color);
-  color: #ffebb3;
 }
 
 h3 {

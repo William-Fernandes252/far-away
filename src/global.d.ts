@@ -7,7 +7,7 @@ declare namespace FarAway {
   }
 
   type PackingItemAction =
-    | { type: 'add' | 'update'; item: FarAway.PackingItem }
-    | { type: 'remove' | 'pack' | 'unpack'; id: FarAway.PackingItem['id'] }
+    | { type: 'add'; item: FarAway.PackingItem }
+    | { type: 'remove' | 'toggle'; id: FarAway.PackingItem['id'] }
     | { type: 'clear' };
 }

@@ -15,35 +15,15 @@ function packingItemsReducer(
       localStorage.setItem('items', JSON.stringify(newState));
       return newState;
     }
-    case 'update': {
-      const newState = state.map(item => {
-        if (item.id === action.item.id) {
-          return action.item;
-        }
-        return item;
-      });
-      localStorage.setItem('items', JSON.stringify(newState));
-      return newState;
-    }
     case 'remove': {
       const newState = state.filter(item => item.id !== action.id);
       localStorage.setItem('items', JSON.stringify(newState));
       return newState;
     }
-    case 'pack': {
+    case 'toggle': {
       const newState = state.map(item => {
         if (item.id === action.id) {
-          return { ...item, packed: true };
-        }
-        return item;
-      });
-      localStorage.setItem('items', JSON.stringify(newState));
-      return newState;
-    }
-    case 'unpack': {
-      const newState = state.map(item => {
-        if (item.id === action.id) {
-          return { ...item, packed: false };
+          return { ...item, packed: !item.packed };
         }
         return item;
       });
@@ -51,7 +31,7 @@ function packingItemsReducer(
       return newState;
     }
     case 'clear': {
-      localStorage.removeItem('items');
+      localStorage.setItem('items', JSON.stringify([]));
       return [];
     }
   }
