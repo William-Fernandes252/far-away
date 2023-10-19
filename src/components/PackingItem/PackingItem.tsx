@@ -8,7 +8,7 @@ export default function PackingItem({ item }: Props) {
   const { dispatch } = usePackingItems();
 
   function handleCheckboxChange() {
-    dispatch({ type: item.packed ? 'unpack' : 'pack', id: item.id });
+    dispatch({ type: 'toggle', id: item.id });
   }
 
   return (
