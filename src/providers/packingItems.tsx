@@ -50,6 +50,10 @@ function packingItemsReducer(
       localStorage.setItem('items', JSON.stringify(newState));
       return newState;
     }
+    case 'clear': {
+      localStorage.removeItem('items');
+      return [];
+    }
   }
 }
 

@@ -44,6 +44,8 @@ export default function NewPackingItemForm() {
       setErrors(validationErrors);
       return;
     }
+
+    setErrors([]);
     dispatch({ type: 'add', item: createNewItemFromForm() });
   }
 
@@ -78,6 +80,11 @@ export default function NewPackingItemForm() {
         value={newItemForm.description}
       />
       <button type="submit">Add</button>
+      <button
+        className="add-form-delete-button"
+        onClick={() => dispatch({ type: 'clear' })}>
+        Delete All
+      </button>
       <div className="add-form-errors">
         {errors.map(error => (
           <p key={error}>{error}</p>
