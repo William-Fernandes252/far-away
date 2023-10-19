@@ -6,8 +6,18 @@ type Props = {
 
 export default function PackingItem({ item }: Props) {
   const { dispatch } = usePackingItems();
+
+  function handleCheckboxChange() {
+    dispatch({ type: item.packed ? 'unpack' : 'pack', id: item.id });
+  }
+
   return (
     <li>
+      <input
+        type="checkbox"
+        value={Number(item.packed)}
+        onChange={handleCheckboxChange}
+      />
       <span style={item.packed ? { textDecoration: 'line-through' } : {}}>
         {item.quantity} {item.description}
       </span>
