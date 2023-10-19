@@ -94,8 +94,8 @@ input {
 .list ul {
   list-style: none;
   width: 80%;
-  overflow: scroll;
-
+  overflow-x: hidden;
+  overflow-y: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.2rem;
@@ -107,6 +107,23 @@ input {
   display: flex;
   align-items: center;
   gap: 1.2rem;
+}
+
+.list ::-webkit-scrollbar {
+  width: 10px;
+}
+
+.list ::-webkit-scrollbar-track {
+  background: none;
+}
+
+.list ::-webkit-scrollbar-thumb {
+  background: #e5781f42;
+  border-radius: 10rem;
+}
+
+.list ::-webkit-scrollbar-thumb:hover {
+  background: #e5771f;
 }
 
 input[type='checkbox'] {
