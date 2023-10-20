@@ -24,6 +24,15 @@ export default function PackingList() {
       break;
   }
 
+  function handleClear() {
+    const confirmed = window.confirm(
+      'Are you sure you want to clear the packing list?',
+    );
+    if (confirmed) {
+      dispatch({ type: 'clear' });
+    }
+  }
+
   return (
     <div className="list">
       <ul>
@@ -44,7 +53,7 @@ export default function PackingList() {
           <option value="description">Sort by description</option>
           <option value="packed">Sort by packed status</option>
         </select>
-        <button onClick={() => dispatch({ type: 'clear' })}>Clear list</button>
+        <button onClick={handleClear}>Clear list</button>
       </div>
     </div>
   );
