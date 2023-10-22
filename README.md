@@ -10,6 +10,7 @@ This is one of the projects that I developed during my enrollment in the Jonas S
 
 - User session recording in the browser;
 - A different and more scalable approach on state management, using contexts and reducers;
+- Unit tests;
 
 With this project, I could learn about
 
